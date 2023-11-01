@@ -302,7 +302,7 @@ the water level. This simulation provides a basis for further development and im
 
 in real-world IoT projects.
 
-SMART WATER FOUNTAIN-PHASE III:
+SMART WATER FOUNTAIN-PHASE IV:
 
 1. Introduction
 
@@ -382,3 +382,178 @@ The Smart Water Fountain Control System developed using MIT App Inventor success
 the project objectives. It provides users with an intuitive interface to control and monitor the water 
 
 fountain remotely.
+
+
+
+
+SMART WATER FOUNTAIN-PHASE-V:
+Introduction
+
+The Smart Water Fountain project represents a fusion of hardware and software technologies, creating an interactive Internet 
+
+of Things (IoT) system. This system allows users to remotely control a water fountain through a user-friendly mobile 
+
+application. Utilizing the power of the NodeMCU ESP8266 microcontroller, an ultrasonic sensor, a water pump, a relay 
+
+module, and an LED indicator, the project showcases the seamless integration of various components for an engaging and 
+
+responsive user experience.
+
+Components Selection
+
+The selection of components was critical to the project's success:
+
+NodeMCU ESP8266:
+
+ The NodeMCU ESP8266 was chosen due to its compatibility with IoT applications and built-in Wi-Fi capabilities, 
+
+enabling seamless communication with the mobile application.
+
+Ultrasonic Sensor (HC-SR04):
+
+ The ultrasonic sensor accurately measures the water level in the fountain, allowing the system to respond 
+
+dynamically based on the water level.
+
+Water Pump:
+
+ The water pump creates the fountain effect, enhancing the visual appeal of the project and providing a real-world 
+
+application of the IoT system.
+
+Relay Module:
+
+ The relay module acts as a switch, allowing the microcontroller to control the high-power water pump safely.
+
+LED Indicator:
+
+ The LED serves as a visual indicator, displaying the status of the fountain (Active or Idle) to provide feedback to the user.
+
+Circuit Setup
+
+The components were meticulously connected to ensure proper functionality:
+
+NodeMCU ESP8266:
+
+ Connected to the ultrasonic sensor, water pump, relay module, and LED using appropriate GPIO pins, establishing a 
+
+secure and responsive communication link.
+
+Ultrasonic Sensor: 
+
+ Connected to the NodeMCU ESP8266, with VCC and GND connected to power sources and Trig and Echo pins 
+
+connected to digital pins for data transmission.
+
+Water Pump and Relay Module:
+The pump was connected via the relay module to allow safe high-power control, ensuring efficient and secure operation.
+
+LED:
+
+ Connected to a digital pin on the NodeMCU ESP8266, providing visual feedback to the user regarding the fountain's 
+
+status.
+
+Arduino Code Implementation
+
+The heart of the system lies in the Arduino code, which orchestrates the interactions between the components:
+
+#include <ESP8266WiFi.h>
+
+#include <ESP8266WebServer.h>
+
+// Wi-Fi credentials
+
+const char* ssid = "YourWiFiSSID";
+
+const char* password = "YourWiFiPassword";
+
+// Pin configurations
+
+ESP8266WebServer server(80);
+
+const int pumpPin = D1;
+
+const int ledPin = D2;
+
+void setup() {
+
+// Wi-Fi connection setup
+
+// Pin mode setup for pump and LED
+
+// Server endpoints for turning the fountain on/off
+
+}
+
+void loop() {
+
+// Handle incoming client requests
+
+}
+
+MIT App Inventor Integration
+
+Incorporating the intuitive MIT App Inventor, a user-friendly mobile application was designed:
+
+User Interface:
+
+"Turn On" Button:
+
+ Initiates a POST request to the server endpoint "/turnon", activating the fountain.
+
+"Turn Off" Button:
+
+ Sends a POST request to the server endpoint "/turnoff", deactivating the fountain.
+
+Blocks Configuration:
+
+"Turn On" Button Click:
+
+ Utilizes the Web component to send a POST request to "http://NodeMCU_IP_Address/turnon",triggering the fountain 
+
+operation.
+
+"Turn Off" Button Click:
+
+ Utilizes the Web component to send a POST request to "http://NodeMCU_IP_Address/turnoff",halting the fountain 
+
+operation.
+
+Testing and Deployment
+
+1. Hardware Setup:
+
+ Assemble the components, ensuring correct connections for seamless communication.
+
+2. Deploy the Arduino Code:
+
+ Upload the provided Arduino code to the NodeMCU ESP8266 board, configuring Wi-Fi credentials and IP address.
+ 
+3. Mobile App Testing:
+
+ Utilize the MIT AI2 Companion app to test the mobile application's functionality. Verify the buttons' responsiveness, ensuring 
+
+they 
+
+correctly control the fountain based on user input.
+
+ 
+
+Conclusion
+
+In conclusion, the Smart Water Fountain project embodies the harmonious integration of hardware and software technologies. 
+
+Byleveraging the power of the NodeMCU ESP8266, an innovative IoT system was created, allowing users to interact with a physical 
+
+device remotely. This project not only showcases the technical prowess in the realm of IoT but also demonstrates the potential for 
+
+creating engaging and interactive applications that bridge the physical and digital worlds. Through careful component selection, 
+
+precise circuitry, meticulous Arduino code implementation, and intuitive MIT App Inventor integration, the Smart Water Fountain 
+
+project stands as a testament to the limitless possibilities offered by the world of Internet of Things.
+
+This comprehensive documentation encapsulates the essence of the Smart Water Fountain project, detailing the project's inception, 
+
+components, circuitry, code, and user interface.
